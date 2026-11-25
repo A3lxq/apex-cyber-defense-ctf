@@ -13,7 +13,9 @@ generation and credential brute-forcing (CeWL + Hydra against FTP),
 loot-driven web directory enumeration, image-metadata key extraction
 (a base64 OpenSSH key hidden in a PNG), SSH key authentication on a
 non-standard port, and Linux privilege escalation via a sudo/GTFOBins
-misconfiguration.
+misconfiguration. 4 flags in total -- web recon, SSH user shell, a
+third flag also dropped as a plain file over the same FTP session, and
+root compromise.
 
 A complete, self-contained offensive security exam environment designed to test network reconnaissance, web-based password profiling, authentication protocol analysis, and Linux privilege escalation.
 
