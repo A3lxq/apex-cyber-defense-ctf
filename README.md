@@ -35,7 +35,7 @@ A complete, self-contained offensive security exam environment designed to test 
 - **Flags:**
   - `Flag 1`: Web Recon (`FLAG{w3b_r3c0n_us3rn4m3_f0und_9482}`) -- also in `flag1.txt`
   - `Flag 2`: SSH User Shell (`FLAG{ssh_k3y_auth_p0rt_2222_pwn3d_1834}`) -- also in `flag2.txt`
-  - `Flag 3`: dropped alongside the others as `flag3.txt`
+  - `Flag 3`: dropped alongside the others (`FLAG{r00t_gtf0b1n5_pr1v3sc_succ3ss_8821}`), in `flag3.txt`
   - `Flag 4`: Root Compromise (`FLAG{r00t_gtf0b1n5_pr1v3sc_succ3ss_8821}`), in `/root/root.txt`
   - On this static box, `flag3.txt` and `root.txt` happen to hold the
     same value (an authoring quirk on the original OVA, found by
