@@ -60,7 +60,7 @@ flowchart TD
 | **Phase 3** | Decoded SSH Key | `id_rsa` (2048-bit RSA) | Base64-decoded from `security_backup.png` | 15 pts |
 | **Phase 4** | **Flag 2** (User Shell) | `FLAG{ssh_k3y_auth_p0rt_2222_pwn3d_1834}` | `/home/alicesmith/user.txt` (SSH Port 2222) | 10 pts |
 | **Phase 5** | PrivEsc Misconfiguration | `(ALL) NOPASSWD: /usr/bin/find` | Listed via `sudo -l` | 5 pts |
-| **Phase 5** | **Flag 3** (Root Shell) | `FLAG{r00t_gtf0b1n5_pr1v3sc_succ3ss_8821}` | `/root/root.txt` via GTFOBins root exploit | 10 pts |
+| **Phase 5** | **Flag 3** (Root Shell) | `FLAG{4p3x_d3f3ns3_pwn3d_5521}` | `/root/root.txt` via GTFOBins root exploit | 10 pts |
 | **Total** | | | | **100 pts** |
 
 ---
@@ -418,7 +418,7 @@ cat /root/root.txt
 ```
 **Output:**
 ```text
-FLAG{r00t_gtf0b1n5_pr1v3sc_succ3ss_8821}
+FLAG{4p3x_d3f3ns3_pwn3d_5521}
 ```
 
 🏆 **Target completely compromised! All 3 flags recovered (100/100 points).**

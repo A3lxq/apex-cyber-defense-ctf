@@ -221,12 +221,12 @@ def handle_ssh_session(conn, addr):
                     "root@apex-defense-target:/home/alicesmith# id\r\n"
                     "uid=0(root) gid=0(root) groups=0(root)\r\n"
                     "root@apex-defense-target:/home/alicesmith# cat /root/root.txt\r\n"
-                    "FLAG{r00t_gtf0b1n5_pr1v3sc_succ3ss_8821}\r\n"
+                    "FLAG{4p3x_d3f3ns3_pwn3d_5521}\r\n"
                     "root@apex-defense-target:/home/alicesmith# \r\n"
                 )
                 conn.sendall(root_shell_msg.encode())
             elif "/root/root.txt" in cmd and "cat" in cmd:
-                conn.sendall(b"FLAG{r00t_gtf0b1n5_pr1v3sc_succ3ss_8821}\r\n")
+                conn.sendall(b"FLAG{4p3x_d3f3ns3_pwn3d_5521}\r\n")
             elif cmd == "help":
                 conn.sendall(b"Supported exam commands: ls, cat, id, whoami, sudo -l, sudo find, exit\r\n")
             else:

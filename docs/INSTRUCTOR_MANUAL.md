@@ -15,7 +15,7 @@
 | **SSH Access** | SSH Port | `2222` (Port 22 is disabled) | 10 pts |
 | **SSH Shell** | Flag 2 | `FLAG{ssh_k3y_auth_p0rt_2222_pwn3d_1834}` (In `/home/alicesmith/user.txt`) | 15 pts |
 | **PrivEsc** | Sudo Rule | `alicesmith ALL=(ALL) NOPASSWD: /usr/bin/find` | 10 pts |
-| **Root Shell** | Flag 3 | `FLAG{r00t_gtf0b1n5_pr1v3sc_succ3ss_8821}` (In `/root/root.txt`) | 15 pts |
+| **Root Shell** | Flag 3 | `FLAG{4p3x_d3f3ns3_pwn3d_5521}` (In `/root/root.txt`) | 15 pts |
 | **Total** | | | **100 pts** |
 
 ---

@@ -76,7 +76,7 @@ chmod 644 "$USER_HOME/clue.txt"
 chown -R alicesmith:alicesmith "$USER_HOME"
 
 # Root Flag (Flag 3)
-echo "FLAG{r00t_gtf0b1n5_pr1v3sc_succ3ss_8821}" > /root/root.txt
+echo "FLAG{4p3x_d3f3ns3_pwn3d_5521}" > /root/root.txt
 chmod 600 /root/root.txt
 
 # 5. Sudoers GTFOBins Rule
