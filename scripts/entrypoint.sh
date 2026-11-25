@@ -58,9 +58,20 @@ chmod 600 /root/root.txt
 cp /etc/sudoers_exam /etc/sudoers.d/alicesmith 2>/dev/null || true
 chmod 440 /etc/sudoers.d/alicesmith
 
+mkdir -p /run/sshd
 ssh-keygen -A
 mkdir -p /var/run/vsftpd/empty
 
 service nginx start
-service vsftpd start
+
+# Not `service vsftpd start`: that wrapper's `start-stop-daemon
+# --background -m` pidfile tracking is unreliable in at least one real
+# container/pod environment observed during testing -- it wrote its
+# OWN pid (and itself never exited, spinning at 100% CPU) instead of
+# vsftpd's actual forked pid, so the init script's own post-start
+# `ps -C vsftpd | grep "$_PID"` check always failed even though vsftpd
+# was genuinely running fine. Launching it directly sidesteps that
+# daemonization dance entirely -- nothing else here needs the pidfile.
+/usr/sbin/vsftpd /etc/vsftpd.conf &
+
 exec /usr/sbin/sshd -D -e -f /etc/ssh/sshd_config
