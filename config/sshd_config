@@ -1,0 +1,27 @@
+# OpenSSH Server Configuration for Pentest Exam
+# Note: Port 22 is disabled; OpenSSH operates exclusively on port 2222.
+Port 2222
+AddressFamily any
+ListenAddress 0.0.0.0
+
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+LoginGraceTime 1m
+PermitRootLogin no
+StrictModes yes
+MaxAuthTries 5
+MaxSessions 5
+
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+
+PasswordAuthentication yes
+PermitEmptyPasswords no
+
+X11Forwarding no
+PrintMotd yes
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
+Banner /etc/issue.net

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Portal | Apex Cyber Defense</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo">APEX<span>DEFENSE</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About & Team</a></li>
+      <li><a href="login.html" class="btn-portal active">Client Portal</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="login-box">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Staff & Client Portal</h2>
+        <p style="color: var(--text-muted); font-size: 0.875rem;">Apex Cyber Defense Administrative Gateway</p>
+      </div>
+
+      <!-- Login disabled notification -->
+      <div class="alert-banner" id="securityBanner">
+        <div>
+          <strong>ACCESS RESTRICTED (#SEC-4029)</strong>
+          Direct web authentication is disabled by security policy. Web login is NOT allowed.
+          Authorized staff (e.g., <code>alicesmith</code>) must authenticate via the <strong>Secure FTP Gateway (Port 21)</strong>.
+        </div>
+      </div>
+
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" class="form-control" placeholder="e.g. alicesmith" autocomplete="off" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" placeholder="••••••••••••" required>
+        </div>
+
+        <button type="submit" class="btn-submit">Authenticate</button>
+      </form>
+
+      <div id="statusMsg" style="display: none; margin-top: 1rem; padding: 0.75rem; border-radius: 4px; text-align: center; font-size: 0.9rem;"></div>
+    </div>
+  </div>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const status = document.getElementById('statusMsg');
+      status.style.display = 'block';
+      status.style.backgroundColor = 'rgba(239, 68, 68, 0.2)';
+      status.style.border = '1px solid #ef4444';
+      status.style.color = '#fca5a5';
+      status.innerHTML = '<strong>Error 403 Forbidden:</strong> Web authentication is disabled. Administrative operations must be conducted via the Secure FTP Gateway on port 21.';
+    }
+  </script>
+
+  <footer>
+    <p>&copy; 2026 Apex Cyber Defense Systems, Inc. Policy Enforcement Engine v4.2</p>
+  </footer>
+</body>
+</html>

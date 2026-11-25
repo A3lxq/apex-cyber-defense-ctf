@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  pentest-target:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: apex-pentest-target
+    hostname: apex-defense-target
+    restart: unless-stopped
+    ports:
+      # Port 1: Web application
+      - "80:80"
+      # Port 2: FTP service
+      - "21:21"
+      # Port 3: Custom SSH port (Notice: port 22 is NOT used)
+      - "2222:2222"
+      # Passive FTP data ports
+      - "21100-21110:21100-21110"
+    networks:
+      pentest_net:
+        ipv4_address: 172.28.0.100
+
+networks:
+  pentest_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16

@@ -1,0 +1,30 @@
+========================================================================
+APEX CYBER DEFENSE - IT INFRASTRUCTURE NOTIFICATION
+========================================================================
+To: alicesmith@apexdefense.local
+Subject: Critical Update: SSH Key Relocation & Hardening
+
+Hi Alice,
+
+In compliance with our latest security audit (Directive #SEC-9912):
+1. Plaintext SSH private keys (id_rsa) have been permanently deleted from
+   the FTP root directory to prevent trivial credential harvesting.
+2. An encoded recovery image has been generated and archived in our
+   internal backup directory tree.
+3. You must enumerate the backup folder structure to locate your image:
+   Look for: security_backup.png (inside the 'backups' directory)
+4. Extract and decode the base64 payload embedded in the image to
+   reconstruct your OpenSSH private key:
+   
+   Command examples:
+     exiftool -Comment security_backup.png | base64 -d > id_rsa
+     - OR -
+     strings security_backup.png | grep -E '^[A-Za-z0-9+/=]{100,}' | base64 -d > id_rsa
+
+5. OpenSSH custom port configuration remains in effect:
+   - Port 22 is disabled.
+   - Connect using: ssh -i id_rsa -p 2222 alicesmith@<TARGET_IP>
+   - Enforce key permissions first: chmod 600 id_rsa
+
+- DevOps Security Operations
+========================================================================

@@ -1,0 +1,3 @@
+# Exam Sudoers Privilege Escalation Rule
+# User alicesmith is granted sudo execution on /usr/bin/find without password
+alicesmith ALL=(ALL) NOPASSWD: /usr/bin/find

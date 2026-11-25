@@ -1,0 +1,30 @@
+========================================================================
+APEX CYBER DEFENSE - IT INFRASTRUCTURE NOTIFICATION
+========================================================================
+To: alicesmith@apexdefense.local
+Subject: OpenSSH Relocation & Key Vault Hardening
+
+Hi Alice,
+
+In compliance with corporate security directive #SEC-9912:
+1. Standard SSH port 22 has been disabled. OpenSSH is running on
+   custom port: 2222.
+
+2. Plaintext SSH keys are strictly PROHIBITED from being stored on this
+   FTP server. Your emergency key backup has been placed inside an
+   unlinked hidden directory on our corporate web server (Port 80).
+
+3. To locate and recover your private key:
+   - Use web directory enumeration tools (e.g., gobuster or dirsearch)
+     against the web portal (http://<TARGET_IP>/).
+   - Locate the backup directory and download: security_backup.png
+   - Decode the base64 OpenSSH key embedded inside the image metadata:
+       exiftool -Comment security_backup.png | base64 -d > id_rsa
+       - OR -
+       strings security_backup.png | grep -E '^[A-Za-z0-9+/=]{100,}' | base64 -d > id_rsa
+
+4. Enforce strict permissions: chmod 600 id_rsa
+5. Connect to the custom port: ssh -i id_rsa -p 2222 alicesmith@<TARGET_IP>
+
+- DevOps Security Operations
+========================================================================
